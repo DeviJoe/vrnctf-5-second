@@ -1,0 +1,6 @@
+version: "3"
+services:
+  static_style:
+    build: .
+    ports:
+      - 1120:1120

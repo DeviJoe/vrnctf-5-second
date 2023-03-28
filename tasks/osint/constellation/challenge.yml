@@ -1,0 +1,80 @@
+# Манифест развертывания задачи на CTFd
+# Полный пример можно посмотреть в документации -- https://github.com/CTFd/ctfcli/blob/master/ctfcli/spec/challenge-example.yml
+# Необязательные, но нужные вам секции можно раскомментировать
+
+# Обязательные поля
+# Имя задачи на CTFd
+name: Radio
+# Никнейм в Telegram
+author: "@kahiroomba"
+# Описание таска на платформе.
+description: |
+  `@kahiroomba`
+
+  Объект SCP-■■■■ представляет собой радио, перехватывающее сигналы из [ДАННЫЕ УДАЛЕНЫ]...
+
+  > Созвездие「D0g-St4r」ухмыляется и внимательно смотрит на вас
+
+# Одна из следующих категорий: web, reverse, pwn, osint, joy, forensic, stegano, crypto
+category: osint
+# Оставляем как есть - цена таски
+value: 100
+# Не трогаем - тип соревнования
+type: dynamic
+
+extra:
+    # Стартовая цена
+    initial: 100
+    # Сколько команд должны решить, чтобы цена упала до минимума
+    decay: 20
+    # Минимальная цена
+    minimum: 10
+
+# Опциональные настройки, включайте по мере необходимости
+# Коннект к удаленной машине, может быть nc или URL к сайту
+# connection_info: nc hostname 12345
+
+# Флаги. Их может быть очень много, но обычно делают один
+flags:
+  # Нечувствительный к регистру флаг
+  - {
+    type: "static",
+    content: "vrnctf{th3_const3llation_0f_c4nis_maj0r_is_gl4d_to_m3et_new_fr13nd_4nd_inv1tes_y0u_to_j0in_th3_hunt}",
+    data: "case_insensitive",
+  }
+
+# Примечания для админов, не видны участникам
+# Разрешены строки
+
+# topics:
+#   - information disclosure
+#   - buffer overflow
+#   - memory forensics
+
+# Публичны, видят участники. Можно вешать теги на задачи
+# tags:
+#   - web
+#   - sandbox
+#   - js
+
+# Секция с файликами, которые отдаются участниками. Относительный путь от папки public
+# files:
+#   - public/task.osz
+
+# Подсказки. Можно передавать словари и строки
+# hints:
+#     - {
+#         content: "This hint costs points",
+#         cost: 10
+#     }
+#     - This hint is free
+
+# Если у вас задача зависит от другой, и не должна быть сдана до того, как решат первую - можно так сделать
+# requirements:
+#     - "Warmup"
+#     - "Are you alive"
+
+# Отображение на платформе. visible/hidden
+state: visible
+# Версия вашей задачи
+version: "0.1"

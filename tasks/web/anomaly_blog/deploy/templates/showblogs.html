@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block body %}
+{% if session.logged_in %}
+<form action="{{ url_for('add_blog') }}" method=post class=add-entry>
+    <dl>
+        <dt>Blogs:
+        <dd><textarea name=text rows=5 cols=40></textarea>
+        <dd><input type=submit value="Create blog">
+    </dl>
+</form>
+{% endif %}
+<ul class=blogs>
+    {% for blog in blogs %}
+    <li><h2>{{ blog.title }}</h2> <a href="{{ url_for('curblog') }}?val={{blog.text|safe}}">{{blog.text|safe}}</a>
+        {% else %}
+    <li><em>Unbelievable. No blogs here so far</em>
+        {% endfor %}
+</ul>
+{% endblock %}

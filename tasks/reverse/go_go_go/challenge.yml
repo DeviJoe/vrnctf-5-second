@@ -1,0 +1,77 @@
+# Манифест развертывания задачи на CTFd
+# Полный пример можно посмотреть в документации -- https://github.com/CTFd/ctfcli/blob/master/ctfcli/spec/challenge-example.yml
+# Необязательные, но нужные вам секции можно раскомментировать
+
+# Обязательные поля
+# Имя задачи на CTFd
+name: Go Go Go
+# Никнейм в Telegram
+author: "@NikitaBerezhnov"
+# Описание таска на платформе.
+description: |
+    `@NikitaBerezhnov`
+
+    Go, go, go... SCP-1 вырывается на свободу. Необходимо срочно его остановить.
+
+
+# Одна из следующих категорий: web, reverse, pwn, osint, joy, forensic, stegano, crypto
+category: reverse
+# Оставляем как есть - цена таски
+value: 100
+# Не трогаем - тип соревнования
+type: dynamic
+
+extra:
+    # Стартовая цена
+    initial: 100
+    # Сколько команд должны решить, чтобы цена упала до минимума
+    decay: 20
+    # Минимальная цена
+    minimum: 10
+
+# Опциональные настройки, включайте по мере необходимости
+# Коннект к удаленной машине, может быть nc или URL к сайту
+# connection_info: nc hostname 12345
+
+# Флаги. Их может быть очень много, но обычно делают один
+flags:
+  - {
+    type: "static",
+    content: "vrnctf{scp0_mystery1_go2_reverse3}",
+  }
+
+# Примечания для админов, не видны участникам
+# Разрешены строки
+
+# topics:
+#   - information disclosure
+#   - buffer overflow
+#   - memory forensics
+
+# Публичны, видят участники. Можно вешать теги на задачи
+# tags:
+#   - web
+#   - sandbox
+#   - js
+
+# Секция с файликами, которые отдаются участниками. Относительный путь от папки public
+files:
+ - public/escape
+
+# Подсказки. Можно передавать словари и строки
+hints:
+   #  - {
+  #       content: "Попробуйте использовать steghide",
+    #     cost: 10
+     #}
+#     - This hint is free
+
+# Если у вас задача зависит от другой, и не должна быть сдана до того, как решат первую - можно так сделать
+# requirements:
+#     - "Warmup"
+#     - "Are you alive"
+
+# Отображение на платформе. visible/hidden
+state: visible
+# Версия вашей задачи
+version: "0.1"

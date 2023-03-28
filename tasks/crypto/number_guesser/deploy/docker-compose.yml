@@ -1,0 +1,6 @@
+version: "3.9"
+services:
+  number_guesser:
+    build: .
+    ports:
+        - "1114:1114"

@@ -1,0 +1,7 @@
+steghide embed -ef flag.txt -cf kvnnrjmy\:nxkqzmtnzxmzo.rot
+pass scpverysecret
+crisbrown2
+
+zip --password crisbrown2 key.zip kvnnrjmy\:nxkqzmtnzxmzo.rot
+
+fcrackzip -u -b -D -p rockyou.txt key.zip
