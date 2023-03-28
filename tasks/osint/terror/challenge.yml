@@ -43,7 +43,7 @@ flags:
   # Нечувствительный к регистру флаг
   - {
     type: "static",
-    content: "vrnctf{69_37_N_98_41_W_4H_1M_2S}",
+    content: "vrnctf{69_37_N_98_41_W_4H_1M_43S}",
     data: "case_insensitive",
   }
 
