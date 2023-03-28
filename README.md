@@ -8,5 +8,5 @@
 
 ## Scoreboard (Online зачет)
 
-![](images/online_1.png)
-![](images/online_2.png)
+![](images/online-1.png)
+![](images/online-2.png)
